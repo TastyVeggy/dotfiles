@@ -1,0 +1,6 @@
+[core]
+	editor = nvim
+[include]
+    path = personal
+[init]
+	defaultBranch = main

@@ -1,0 +1,9 @@
+export VIVADO_HOME=$HOME/dev/containers/vivado/home
+mkdir -p $VIVADO_HOME
+
+export VIVADO_INSTALL_STUFF=$HOME/dev/tools/vivado/2025.2/Vivado
+
+export HOME=$VIVADO_HOME
+source "$VIVADO_INSTALL_STUFF/settings64.sh"
+cd
+

@@ -1,0 +1,64 @@
+setopt extendedglob
+
+export ZSH_DIR=$HOME/.config/zsh
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
+
+if [[ -f "$ZSH_DIR/completion.zsh" ]]; then
+    source "$ZSH_DIR/completion.zsh"
+    if [[ -f "$ZSH_DIR/vim_ctrls.zsh" ]]; then
+        source "$ZSH_DIR/vim_ctrls.zsh"
+    fi 
+fi 
+
+PROMPT="%~%F{green} 〉%f"
+RPROMPT='%F{242}%D{%H:%M:%S}%f'
+
+[[ ":$PATH:" != *":$HOME/.config/bin:"* ]] && export PATH="$PATH:$HOME/.config/bin"
+
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$PATH:$HOME/.local/bin"
+
+# Make xauthority file go somewhere else
+export XAUTHORITY="$HOME/.cache/Xauthority"
+
+export WGETRC="$HOME/.config/wget/wgetrc"
+
+HISTFILE=~/.cache/history
+HISTSIZE=1000
+SAVEHIST=1000
+
+if [[ -f "$ZSH_DIR/school.zsh" ]]; then
+    source "$ZSH_DIR/school.zsh"
+fi
+if [[ -f "$ZSH_DIR/functions.zsh" ]]; then
+  source "$ZSH_DIR/functions.zsh"
+fi
+
+if [[ -f "$ZSH_DIR/screenshots.zsh" ]]; then
+  source "$ZSH_DIR/screenshots.zsh"
+fi
+
+if [[ -f "$ZSH_DIR/aliases.zsh" ]]; then
+  source "$ZSH_DIR/aliases.zsh"
+fi
+if [[ -f "$ZSH_DIR/languages.zsh" ]]; then
+    source "$ZSH_DIR/languages.zsh"
+fi 
+
+
+eval "$(fzf --zsh)" # Set up fzf key bindings and fuzzy completion
+export FZF_DEFAULT_OPTS="--ignore-case"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --strip-cwd-prefix'
+export FZF_CTRL_T_COMMAND='fd --hidden --strip-cwd-prefix'
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# distrobox stuff. MUST BE LAST CUZ HOME IS CHANGED
+CONTAINER_DIR="$ZSH_DIR/containers"
+
+if [[ -d "$CONTAINER_DIR" && -n "$CONTAINER_ID" ]]; then
+    if [[ -f "$CONTAINER_DIR/$CONTAINER_ID" ]]; then
+        source "$CONTAINER_DIR/$CONTAINER_ID"
+    fi
+fi

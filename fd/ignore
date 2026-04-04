@@ -1,0 +1,56 @@
+# Source Control & Package Managers
+.git
+node_modules
+venv
+.opam
+.npm
+.gradle
+.conda
+.cargo
+.dotnet
+.nodenv
+.rbenv
+.rustup
+
+# Cache & Build Artifacts
+.cache
+build
+_build
+.debug
+.pki
+
+# System & App Configs (Noise reduction)
+.local
+.gnupg
+.aws
+.eclipse
+.MATLABConnector
+.MathWorks
+.Xilinx
+.arduino
+.java
+.mozilla
+.openjfx
+.ipython
+.matlab
+.icons
+.r
+.themes
+.subversion
+.keras
+.scenebuilder
+.texlive
+.lc
+.vscode
+.zoom
+.nv
+.jupyter
+locale
+
+# Specific Nested Paths
+.config/mozilla/firefox/*
+dev/dotfiles
+dev/tools
+dev/containers/*/*
+.config/themes/*/*
+.config/GIMP/3.0

@@ -1,0 +1,7 @@
+skip_dir = "build|venv|pycache|node_modules|dist|.git|.hg|.svn|_build|.idea|.vscode|__MACOSX|tmp|.cache"
+
+skip_file = "~*|.~*|*.tmp|*.swp|*.swo|*.pyc|*.pyo|*.class|*.jar|*.war|*.ear|*.cmi|*.cmo|*.cmx|*.o|*.a|.DS_Store|Thumbs.db|*.log|*.aux|*.fls|*.listing|*.fdb_latexmk|*.synctex.gz|*.out|*.partial"
+
+
+
+

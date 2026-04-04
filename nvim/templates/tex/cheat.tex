@@ -1,0 +1,110 @@
+\documentclass[10pt, landscape]{article}
+\usepackage[scaled=0.92]{helvet}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{ifthen}
+\usepackage[a4paper,margin=3mm,landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\usepackage{newtxtext}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{mathtools}
+\setlist{nosep}
+
+% for including images
+\graphicspath{ {./images/} }
+
+\pdfinfo{}
+
+% Turn off header and footer
+\pagestyle{empty}
+
+\newenvironment{tightcenter}{%
+  \setlength\topsep{0pt}
+  \setlength\parskip{0pt}
+  \begin{center}
+  }{%
+  \end{center}
+}
+
+% redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+  {-1ex plus -.5ex minus -.2ex}%
+  {0.5ex plus .2ex}%x
+{\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+  {-1explus -.5ex minus -.2ex}%
+  {0.5ex plus .2ex}%
+{\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+  {-1ex plus -.5ex minus -.2ex}%
+  {1ex plus .2ex}%
+{\normalfont\small\bfseries}}%
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand\rmdefault{\sfdefault}
+%  makes nested numbering (e.g. 1.1.1, 1.1.2, etc)
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+\renewcommand\labelitemii{•}
+\renewcommand\labelitemiii{•}
+%  convenient absolute value symbol
+\newcommand{\abs}[1]{\vert #1 \vert}
+%  convenient floor and ceiling
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+%  convenient modulo
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+%  for logical not operator, iff symbol, convenient "if/then"
+\renewcommand{\lnot}{\mathord{\sim}}
+\let\then\Rightarrow
+\let\Then\Rightarrow
+%  vectors
+\newcommand{\vv}[1]{\boldsymbol{#1}}
+\newcommand{\VV}[1]{\overrightarrow{#1}}
+%  column vector
+\newcommand{\cvv}[1]{\left(
+    \begin{smallmatrix}#1
+\end{smallmatrix}\right)}
+\newcommand\bggreen{\cellcolor{green!10}}
+
+\makeatother
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+%% this changes all items (enumerate and itemize)
+\setlength{\leftmargini}{0.5cm}
+\setlength{\leftmarginii}{0.4cm}
+\setlength{\leftmarginiii}{0.5cm}
+\setlist[enumerate,1]{leftmargin=2mm,labelindent=1mm,labelsep=1mm}
+\setlist[itemize,1]{leftmargin=2mm,labelindent=1mm,labelsep=1mm}
+\setlist[itemize,2]{leftmargin=3mm,labelindent=1mm,labelsep=1mm}
+\setlist[itemize,3]{leftmargin=3mm,labelindent=1mm,labelsep=1mm}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{4}
+
+  \setlength{\columnseprule}{0.25pt}
+  \setlength{\premulticols}{1pt}
+  \setlength{\postmulticols}{1pt}
+  \setlength{\multicolsep}{1pt}
+  \setlength{\columnsep}{2pt}
+
+  \section{}
+
+\end{multicols}
+\end{document}

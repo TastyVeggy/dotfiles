@@ -1,0 +1,5 @@
+#!/bin/bash
+# Get active window ID
+WINDOW_ID=$(xdotool getactivewindow)
+# Capture the window using its ID
+maim -i "$WINDOW_ID" | xclip -selection clipboard -t image/png -i

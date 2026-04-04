@@ -1,0 +1,9 @@
+#!/bin/sh
+# Compile markdown to pdf
+
+file=$(readlink -f "$1")
+base=$(echo "$file" | sed 's/\..*//')
+
+case "$1" in 
+	*.md) pandoc --filter pandoc-crossref "$file" -o "$base".pdf --pdf-engine=xelatex;;
+esac

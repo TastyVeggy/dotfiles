@@ -1,0 +1,7 @@
+[Unit]
+Description=OneDrive Sync
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/onedrive --sync --verbose --single-directory="SharedDrive"
+
