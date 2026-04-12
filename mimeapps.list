@@ -1,2 +1,2 @@
 [Added Associations]
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+application/pdf=firefox.desktop;org.pwmt.zathura-pdf-mupdf.desktop;

@@ -16,3 +16,8 @@ go
 
 dconf
 pulse
+libreoffice
+
+pavucontrol.ini
+
+xfce4/xfconf/xfce-perchannel-xml/thunar.xml

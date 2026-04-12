@@ -11,6 +11,12 @@ export CUDA_HOME=/opt/cuda
 export CUDA_PATH=/opt/cuda
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+export CUDA_CACHE_PATH="$HOME/.cache/nvidia/ComputeCache"
+
+# tex
+export TEXMFCONFIG="$HOME/.cache/texlive/texmf-config"
+export TEXMFVAR="/$HOME/.cache/texlive/texmf-var"
+
 
 # GO stuff
 # export PATH="$PATH:/usr/local/go/bin"

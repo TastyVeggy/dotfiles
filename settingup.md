@@ -209,7 +209,7 @@ sudo pacman -S xorg-server xorg-xinit \
                cmake \ 
                maim xdotool xclip \ 
                fzf fd \ 
-               noto-fonts noto-fonts-emoji noto-fonts-extra noto-fonts-cjk ttf-jetbrains-mono-nerd \ 
+               noto-fonts noto-fonts-emoji noto-fonts-extra noto-fonts-cjk ttf-jetbrains-mono-nerd otf-latin-modern\ 
                feh \ 
                picom \ 
                python \ 
@@ -218,7 +218,7 @@ sudo pacman -S xorg-server xorg-xinit \
                python-pynvim \
                ripgrep \ 
                gimp libreoffice \ 
-               zathura texlive zathura-pdf-mupdf \ 
+               zathura texlive biber texlive-langchinese zathura-pdf-mupdf \ 
                thunar \ 
                wget \ 
                tmux
@@ -287,13 +287,6 @@ Add wallpaper picture to `.config/wallpaper` (also tweak i3 to set correct path 
 yay -S betterlockscreen
 betterlockscreen -u .config/wallpaper/... //update wallpaper
 systemctl enable betterlockscreen@$USER
-```
-
-change `/etc/systemd/sleep.conf` so that 
-```
-AllowHibernation=no
-AllowSuspendThenHibernate=no
-AllowHybridSleep=no
 ```
 
 ### SSH for github
