@@ -1,22 +1,15 @@
-export NVM_DIR="$HOME/.local/share/nvm"
-source /usr/share/nvm/init-nvm.sh
-export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
+# node
+function load_nvm() {
+    unset -f nvm node npm npx
+    
+    [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
+}
+for cmd in nvm node npm npx yarn; do
+  eval "function $cmd() { load_nvm; $cmd \"\$@\"; }"
+done
 
 # opam
-export OPAMROOT="$HOME/.local/share/opam"
 eval $(opam env)
-
-# cuda
-export CUDA_HOME=/opt/cuda
-export CUDA_PATH=/opt/cuda
-export PATH=$CUDA_HOME/bin:$PATH
-export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
-export CUDA_CACHE_PATH="$HOME/.cache/nvidia/ComputeCache"
-
-# tex
-export TEXMFCONFIG="$HOME/.cache/texlive/texmf-config"
-export TEXMFVAR="/$HOME/.cache/texlive/texmf-var"
-
 
 # GO stuff
 # export PATH="$PATH:/usr/local/go/bin"

@@ -50,5 +50,6 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 fi
 
 xrdb -merge ~/.config/x11/Xresources
+
 exec i3
 

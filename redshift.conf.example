@@ -1,0 +1,13 @@
+[redshift]
+temp-day=5700
+temp-night=5000
+
+transition=1
+
+location-provider=manual
+
+adjustment-method=randr
+
+[manual]
+lat=LATITUDE
+lon=LONGITUDE

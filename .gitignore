@@ -11,6 +11,7 @@ wallpaper/chill.png
 GIMP
 
 tmux/plugins
+tmux/resurrect
 
 go
 
@@ -21,3 +22,13 @@ libreoffice
 pavucontrol.ini
 
 xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+redshift.conf
+
+htop
+
+Thunar
+retroarch
+ibus
+
+fcitx5
+fcitx

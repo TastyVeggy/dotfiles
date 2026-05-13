@@ -1,5 +1,5 @@
-alias ls='ls --color=auto'
-alias ll='ls -alFh'
+alias ls='ls --color=auto -v'
+alias ll='ls -alFh -1v'
 alias pacman='sudo pacman'
 alias mkdir='mkdir -pv'
 alias ..='cd ..'

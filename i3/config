@@ -30,7 +30,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dim
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -55,7 +55,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty 
+bindsym $mod+Return exec kitty
 # backup
 bindsym Alt+t exec kitty 
 
@@ -73,6 +73,7 @@ bindsym $mod+q kill
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 bindsym mod1+e exec firefox
+bindsym mod1+w exec rnote
 
 bindsym mod1+f exec thunar
 # change focus
@@ -229,14 +230,14 @@ client.placeholder      #12121F #12121F #D4D7FF #12121F   #222236
 
 client.background       #12121F
 
-exec --no-startup-id "export PATH=$PATH:$HOME/.config/bin"
+# exec --no-startup-id "export PATH=$PATH:$HOME/.config/bin"
 #border
 default_border pixel 3
 
 # polybar launch
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
 # fcitx input support (for chinese language)
-# exec --no-startup-id fcitx5 -d
+exec --no-startup-id fcitx5 -d
 
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id sh -c 'mkdir -p $HOME/Pictures/Screenshots && maim -s -o "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
@@ -245,3 +246,11 @@ bindsym $mod+Shift+Mod1+s exec maim -s -o | xclip -selection clipboard -t image/
 
 bindsym $mod+Shift+w exec maim_active_window
 bindsym $mod+Shift+Mod1+w exec maim_active_window_clipboard
+
+# xp pen tablet driver
+exec --no-startup-id "/usr/lib/pentablet/PenTablet"
+# cannot find xp pen tablet standalone daemon
+for_window [class="(?i)pentablet"] move to workspace 9
+
+# redshift 
+exec_always --no-startup-id redshift
